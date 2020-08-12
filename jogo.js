@@ -6,14 +6,22 @@ sprites.src = './sprites.png';
 const canvass = document.querySelector('canvas');
 const context = canvass.getContext('2d');
 
+const flappyBird = {
+    spriteX: 0,
+    spriteY: 0,
+    largura: 33,
+    altura: 24,
+    x: 10,
+    y: 50
+};
 
 function loop(){
     context.drawImage(
         sprites,
-        0, 0, // sprite x / sprite y
-        33, 24, // tamanho do sprite original
-        10, 50,
-        33, 24 // tamanho do sprite (renderizado)
+        flappyBird.spriteX, flappyBird.spriteY,
+        flappyBird.largura, flappyBird.altura,
+        flappyBird.x, flappyBird.y,
+        flappyBird.largura, flappyBird.altura,
     );
     requestAnimationFrame(loop);
 }
