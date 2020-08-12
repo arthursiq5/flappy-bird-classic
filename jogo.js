@@ -78,6 +78,8 @@ const flappyBird = {
 };
 
 function loop(){
+    planoDeFundo.desenha();
+    chao.desenha();
     flappyBird.desenha();
 
     requestAnimationFrame(loop);
