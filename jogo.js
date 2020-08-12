@@ -12,17 +12,21 @@ const flappyBird = {
     largura: 33,
     altura: 24,
     x: 10,
-    y: 50
+    y: 50,
+    desenha(){
+        context.drawImage(
+            sprites,
+            flappyBird.spriteX, flappyBird.spriteY,
+            flappyBird.largura, flappyBird.altura,
+            flappyBird.x, flappyBird.y,
+            flappyBird.largura, flappyBird.altura,
+        );
+    }
 };
 
 function loop(){
-    context.drawImage(
-        sprites,
-        flappyBird.spriteX, flappyBird.spriteY,
-        flappyBird.largura, flappyBird.altura,
-        flappyBird.x, flappyBird.y,
-        flappyBird.largura, flappyBird.altura,
-    );
+    flappyBird.desenha();
+
     requestAnimationFrame(loop);
 }
 
