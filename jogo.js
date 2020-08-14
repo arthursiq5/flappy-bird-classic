@@ -83,9 +83,30 @@ const flappyBird = {
     }
 };
 
+const mensagemGetReady = {
+  sX: 134,
+  sY: 0,
+  w: 174,
+  h: 152,
+  x: (canvas.width / 2) - 174 / 2,
+  y: 50,
+  desenha() {
+    context.drawImage(
+      sprites,
+      mensagemGetReady.sX, mensagemGetReady.sY,
+      mensagemGetReady.w, mensagemGetReady.h,
+      mensagemGetReady.x, mensagemGetReady.y,
+      mensagemGetReady.w, mensagemGetReady.h
+    );
+  }
+};
+
 function loop(){
     planoDeFundo.desenha();
     chao.desenha();
+
+    mensagemGetReady.desenha();
+
     flappyBird.desenha();
     flappyBird.atualiza();
 
