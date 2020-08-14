@@ -125,8 +125,6 @@ telas.JOGO = {
         planoDeFundo.desenha();
         chao.desenha();
 
-        mensagemGetReady.desenha();
-
         flappyBird.desenha();
     },
     atualiza(){
