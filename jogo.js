@@ -110,7 +110,10 @@ const telas = {};
 
 telas.INICIO = {
     desenha(){
+        planoDeFundo.desenha();
+        chao.desenha();
         mensagemGetReady.desenha();
+        flappyBird.desenha();
     },
     atualiza(){
 
