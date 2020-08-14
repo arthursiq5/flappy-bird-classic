@@ -101,17 +101,44 @@ const mensagemGetReady = {
   }
 };
 
+let telaAtiva = {};
+const mudaParaTela = (novaTela) => {
+    telaAtiva = novaTela
+};
+
+const telas = {};
+
+telas.INICIO = {
+    desenha(){
+        mensagemGetReady.desenha();
+    },
+    atualiza(){
+
+    }
+}
+
+telas.JOGO = {
+    desenha(){
+        planoDeFundo.desenha();
+        chao.desenha();
+
+        mensagemGetReady.desenha();
+
+        flappyBird.desenha();
+    },
+    atualiza(){
+        flappyBird.atualiza();
+        
+    }
+};
+
 function loop(){
-    planoDeFundo.desenha();
-    chao.desenha();
-
-    mensagemGetReady.desenha();
-
-    flappyBird.desenha();
-    flappyBird.atualiza();
+    telaAtiva.desenha();
+    telaAtiva.atualiza();
 
 
     requestAnimationFrame(loop);
 }
 
+mudaParaTela(telas.INICIO);
 loop();
